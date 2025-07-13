@@ -52,4 +52,3 @@ contenedor.appendChild(columna);
 creditosObtenidos.textContent = creditos; }
 
 document.addEventListener('DOMContentLoaded', cargarMalla);
-
