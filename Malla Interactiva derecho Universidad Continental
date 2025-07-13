@@ -1,33 +1,101 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Malla Curricular Interactiva - Derecho</title>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
 
-  <!-- Fuente y estilos -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <h1>Malla Curricular Derecho</h1>
-  </header>
+header {
+  padding: 1rem;
+  background-color: #003366;
+  color: white;
+  text-align: center;
+}
 
-  <main>
-    <div id="malla" class="malla-container"></div>
-  </main>
+main {
+  padding: 1rem;
+  overflow-x: auto;
+}
 
-  <footer>
-    <div class="creditos">
-      Créditos obtenidos: <span id="creditos-obtenidos">0</span>
-    </div>
-  </footer>
+.malla-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
 
-  <!-- Archivos JavaScript -->
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+.semestre {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+}
+
+.semestre h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background-color: #ddd;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.curso {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-left: 8px solid #888;
+}
+
+.curso:hover {
+  transform: scale(1.02);
+}
+
+.curso.aprobado {
+  background-color: #c8e6c9;
+  border-left-color: #388e3c;
+}
+
+.curso.bloqueado {
+  background-color: #eeeeee;
+  color: #999;
+  cursor: not-allowed;
+  border-left-color: #ccc;
+}
+
+.curso .creditos {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: #fff;
+  color: #333;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background: #003366;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Colores por semestre */
+.semestre-1 .curso { border-left-color: #4caf50; }
+.semestre-2 .curso { border-left-color: #2196f3; }
+.semestre-3 .curso { border-left-color: #ff9800; }
+.semestre-4 .curso { border-left-color: #9c27b0; }
+.semestre-5 .curso { border-left-color: #f44336; }
+.semestre-6 .curso { border-left-color: #3f51b5; }
+.semestre-7 .curso { border-left-color: #00bcd4; }
+.semestre-8 .curso { border-left-color: #8bc34a; }
+.semestre-9 .curso { border-left-color: #795548; }
+.semestre-10 .curso { border-left-color: #607d8b; }
