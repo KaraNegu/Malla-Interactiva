@@ -4,15 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Malla Curricular Interactiva - Derecho</title>
+
+  <!-- Fuente y estilos -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1 class="titulo">Malla Curricular Derecho</h1>
-  <div id="malla" class="malla"></div>
-  <div class="creditos">
-    Créditos obtenidos: <span id="creditos-obtenidos">0</span>
-  </div>
+  <header>
+    <h1>Malla Curricular Derecho</h1>
+  </header>
 
+  <main>
+    <div id="malla" class="malla-container"></div>
+  </main>
+
+  <footer>
+    <div class="creditos">
+      Créditos obtenidos: <span id="creditos-obtenidos">0</span>
+    </div>
+  </footer>
+
+  <!-- Archivos JavaScript -->
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
