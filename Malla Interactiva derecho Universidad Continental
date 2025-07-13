@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Malla Curricular Interactiva - Derecho</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <h1 class="titulo">Malla Curricular Derecho</h1>
-  <div id="malla" class="malla"></div>
-  <div class="creditos">
-    Créditos obtenidos: <span id="creditos-obtenidos">0</span>
-  </div>
+const cursos = [ // SEMESTRE 1 { codigo: "24UCO0001", nombre: "INTRODUCCIÓN AL DERECHO", creditos: 5, semestre: 1, prerrequisitos: [] }, { codigo: "24UCO0002", nombre: "ANTROPOLOGÍA Y SOCIOLOGÍA JURÍDICA", creditos: 5, semestre: 1, prerrequisitos: [] }, { codigo: "24UCO0003", nombre: "HISTORIA DEL DERECHO", creditos: 4, semestre: 1, prerrequisitos: [] }, { codigo: "24UCO0004", nombre: "TEORÍA GENERAL DEL DERECHO I", creditos: 5, semestre: 1, prerrequisitos: [] }, { codigo: "24UCO0005", nombre: "LÓGICA JURÍDICA", creditos: 3, semestre: 1, prerrequisitos: [] },
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
-</body>
-</html>
+// SEMESTRE 2 { codigo: "24UCO0006", nombre: "TEORÍA GENERAL DEL DERECHO II", creditos: 5, semestre: 2, prerrequisitos: ["24UCO0004"] }, { codigo: "24UCO0007", nombre: "DERECHO ROMANO", creditos: 4, semestre: 2, prerrequisitos: ["24UCO0003"] }, { codigo: "24UCO0008", nombre: "DERECHO NATURAL Y DE GENTES", creditos: 3, semestre: 2, prerrequisitos: ["24UCO0002"] }, { codigo: "24UCO0009", nombre: "HISTORIA DE LAS IDEAS POLÍTICAS", creditos: 4, semestre: 2, prerrequisitos: [] }, { codigo: "24UCO0010", nombre: "FILOSOFÍA DEL DERECHO", creditos: 5, semestre: 2, prerrequisitos: ["24UCO0005"] },
+
+// SEMESTRE 3 { codigo: "24UCO0011", nombre: "DERECHO CONSTITUCIONAL I", creditos: 5, semestre: 3, prerrequisitos: ["24UCO0006"] }, { codigo: "24UCO0012", nombre: "DERECHO CIVIL I (PERSONAS Y FAMILIA)", creditos: 5, semestre: 3, prerrequisitos: ["24UCO0007"] }, { codigo: "24UCO0013", nombre: "DERECHO PENAL I", creditos: 5, semestre: 3, prerrequisitos: [] }, { codigo: "24UCO0014", nombre: "DERECHOS HUMANOS", creditos: 4, semestre: 3, prerrequisitos: ["24UCO0008"] },
+
+// SEMESTRE 4 { codigo: "24UCO0015", nombre: "DERECHO CONSTITUCIONAL II", creditos: 5, semestre: 4, prerrequisitos: ["24UCO0011"] }, { codigo: "24UCO0016", nombre: "DERECHO CIVIL II (ACTO JURÍDICO)", creditos: 5, semestre: 4, prerrequisitos: ["24UCO0012"] }, { codigo: "24UCO0017", nombre: "DERECHO PENAL II", creditos: 5, semestre: 4, prerrequisitos: ["24UCO0013"] }, { codigo: "24UCO0018", nombre: "DERECHO ADMINISTRATIVO I", creditos: 5, semestre: 4, prerrequisitos: ["24UCO0011"] },
+
+// SEMESTRE 5 { codigo: "24UCO0019", nombre: "DERECHO CIVIL III (OBLIGACIONES)", creditos: 5, semestre: 5, prerrequisitos: ["24UCO0016"] }, { codigo: "24UCO0020", nombre: "DERECHO PROCESAL CONSTITUCIONAL", creditos: 5, semestre: 5, prerrequisitos: ["24UCO0015"] }, { codigo: "24UCO0021", nombre: "DERECHO ADMINISTRATIVO II", creditos: 5, semestre: 5, prerrequisitos: ["24UCO0018"] }, { codigo: "24UCO0022", nombre: "DERECHO INTERNACIONAL PÚBLICO", creditos: 5, semestre: 5, prerrequisitos: [] },
+
+// SEMESTRE 6 { codigo: "24UCO0023", nombre: "DERECHO CIVIL IV (CONTRATOS)", creditos: 5, semestre: 6, prerrequisitos: ["24UCO0019"] }, { codigo: "24UCO0024", nombre: "DERECHO PROCESAL CIVIL I", creditos: 5, semestre: 6, prerrequisitos: [] }, { codigo: "24UCO0025", nombre: "DERECHO LABORAL I", creditos: 5, semestre: 6, prerrequisitos: [] }, { codigo: "24UCO0026", nombre: "DERECHO PENAL III", creditos: 5, semestre: 6, prerrequisitos: ["24UCO0017"] },
+
+// SEMESTRE 7 { codigo: "24UCO0027", nombre: "DERECHO CIVIL V (REALES)", creditos: 5, semestre: 7, prerrequisitos: ["24UCO0023"] }, { codigo: "24UCO0028", nombre: "DERECHO PROCESAL CIVIL II", creditos: 5, semestre: 7, prerrequisitos: ["24UCO0024"] }, { codigo: "24UCO0029", nombre: "DERECHO LABORAL II", creditos: 5, semestre: 7, prerrequisitos: ["24UCO0025"] }, { codigo: "24UCO0030", nombre: "DERECHO PROCESAL PENAL", creditos: 5, semestre: 7, prerrequisitos: ["24UCO0026"] },
+
+// SEMESTRE 8 { codigo: "24UCO0031", nombre: "DERECHO CIVIL VI (SUCESIONES)", creditos: 5, semestre: 8, prerrequisitos: ["24UCO0027"] }, { codigo: "24UCO0032", nombre: "DERECHO EMPRESARIAL", creditos: 5, semestre: 8, prerrequisitos: [] }, { codigo: "24UCO0033", nombre: "DERECHO INTERNACIONAL PRIVADO", creditos: 5, semestre: 8, prerrequisitos: ["24UCO0022"] }, { codigo: "24UCO0034", nombre: "DERECHO AMBIENTAL", creditos: 4, semestre: 8, prerrequisitos: [] },
+
+// SEMESTRE 9 { codigo: "24UCO0035", nombre: "ARBITRAJE Y MÉTODOS ALTERNATIVOS DE SOLUCIÓN DE CONFLICTOS", creditos: 5, semestre: 9, prerrequisitos: ["24UCO0028"] }, { codigo: "24UCO0036", nombre: "FILOSOFÍA POLÍTICA Y DEMOCRACIA", creditos: 4, semestre: 9, prerrequisitos: ["24UCO0009"] }, { codigo: "24UCO0037", nombre: "DERECHO TRIBUTARIO", creditos: 5, semestre: 9, prerrequisitos: [] }, { codigo: "24UCO0038", nombre: "ÉTICA PROFESIONAL", creditos: 3, semestre: 9, prerrequisitos: [] },
+
+// SEMESTRE 10 { codigo: "24UCO0039", nombre: "CLÍNICA JURÍDICA", creditos: 5, semestre: 10, prerrequisitos: ["24UCO0035"] }, { codigo: "24UCO0040", nombre: "FORMULACIÓN Y EVALUACIÓN DE PROYECTOS JURÍDICOS", creditos: 4, semestre: 10, prerrequisitos: [] }, { codigo: "24UCO0041", nombre: "LITIGACIÓN ORAL", creditos: 5, semestre: 10, prerrequisitos: ["24UCO0030"] }, { codigo: "24UCO0042", nombre: "TESIS / TRABAJO DE INVESTIGACIÓN", creditos: 6, semestre: 10, prerrequisitos: [] } ];
